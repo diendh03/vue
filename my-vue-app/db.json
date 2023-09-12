@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "productName": "Iphone2",
+      "price": "2000",
+      "id": 2
+    },
+    {
+      "productName": "adada",
+      "price": "12313",
+      "id": 3
+    },
+    {
+      "productName": "2",
+      "price": "2000",
+      "id": 4
+    }
+  ]
+}
