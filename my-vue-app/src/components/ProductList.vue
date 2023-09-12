@@ -25,8 +25,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, h } from "vue";
 import axios from "axios";
+import { ElMessage } from "element-plus";
 const tableData = ref([]);
 const GetListProduct = async () => {
   try {
@@ -52,6 +53,11 @@ const handleDelete = async (row: User) => {
   const isChecked = confirm("Are you sure you want to delete?");
   if (isChecked) {
     await axios.delete(`http://localhost:3000/products/${row.id}`);
+    ElMessage({
+      message: h("p", null, [
+        h("span", { style: "color:red" }, "Xóa sản phẩm thành công "),
+      ]),
+    });
     tableData.value = tableData.value.filter((item: any) => item.id != row.id);
   }
 };

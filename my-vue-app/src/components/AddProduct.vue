@@ -1,28 +1,40 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, watchEffect } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import messageBox from "../config/messageBox";
 const addForm = reactive({
   productName: "",
   price: 0,
 });
+
 const router = useRouter();
 const onHandleSubmit = async () => {
   let isChecked = true;
+  const errors = {
+    productName: "",
+    price: "",
+  };
   if (addForm.productName.trim() === "") {
-    alert("Không được để trống");
+    errors.productName = "Không được để trống";
     isChecked = false;
   }
   if (addForm.price <= 0) {
-    alert("Không được để trống");
+    errors.price = "Không được để trống";
     isChecked = false;
+  }
+  if (isChecked == false) {
+    watchEffect(() => {
+      (errors.productName = errors.productName || ""),
+        (errors.price = errors.price || "");
+    });
   }
   if (isChecked) {
     const data = await axios.post("http://localhost:3000/products", addForm);
     if (!data) {
-      alert("Thêm sản phẩm thất bại");
+      messageBox("Thêm sản phẩm thất bại");
     } else {
-      alert("Thêm sản phẩm thành công");
+      messageBox("Thêm sản phẩm thành công");
       router.push("/product-manager");
     }
   }
