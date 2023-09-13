@@ -6,7 +6,11 @@
       <template #header>
         <el-input size="small" placeholder="Type to search" />
         <router-link to="/add-product">
-          <el-button size="small" type="primary" icon="el-icon-search"
+          <el-button
+            size="small"
+            class="bg-blue-500 m-2"
+            type="primary"
+            icon="el-icon-search"
             >AddProduct</el-button
           >
         </router-link>
@@ -16,7 +20,11 @@
           <el-button size="small">Edit</el-button>
         </router-link>
 
-        <el-button size="small" type="danger" @click="handleDelete(scope.row)"
+        <el-button
+          size="small"
+          class="bg-red-600"
+          type="danger"
+          @click="handleDelete(scope.row)"
           >Delete</el-button
         >
       </template>

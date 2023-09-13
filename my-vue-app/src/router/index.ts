@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import LayoutAdminVue from "../layout/LayoutAdmin.vue";
-import AddProductVue from "../components/AddProduct.vue";
-import ProductListVue from "../components/ProductList.vue";
-import UpdateProductVue from "../components/UpdateProduct.vue";
+import AddProductVue from "../views/list/product/components/AddProduct.vue";
+import ProductListVue from "../views/list/product/ProductList.vue";
+import UpdateProductVue from "../views/list/product/components/UpdateProduct.vue";
 const routes: any = [
   {
     path: "/",

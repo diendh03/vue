@@ -1,14 +1,19 @@
 {
   "products": [
     {
-      "productName": "adada",
+      "productName": "IPhone 12",
       "price": "12313",
       "id": 3
     },
     {
-      "productName": "adada",
+      "productName": "IPhone 13",
       "price": "123",
       "id": 6
+    },
+    {
+      "productName": "IPhone 14",
+      "price": "123",
+      "id": 7
     }
   ]
 }

@@ -52,7 +52,8 @@ const onHandleUpdate = async () => {
 </script>
 
 <template>
-  <el-form ref="form" :model="addForm">
+  <el-h1>Thêm sản phẩm </el-h1>
+  <el-form class="m-5" ref="form" :model="addForm">
     <el-form-item label="Tên sản phẩm">
       <el-input v-model="addForm.productName"></el-input>
     </el-form-item>
@@ -60,7 +61,9 @@ const onHandleUpdate = async () => {
       <el-input type="text" v-model="addForm.price"></el-input>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onHandleUpdate">Sửa sản phẩm</el-button>
+      <el-button type="primary" class="bg-blue-500" @click="onHandleUpdate"
+        >Sửa sản phẩm</el-button
+      >
     </el-form-item>
   </el-form>
   <br />

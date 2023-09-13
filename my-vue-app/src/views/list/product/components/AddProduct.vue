@@ -2,7 +2,7 @@
 import { reactive, watchEffect } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
-import messageBox from "../config/messageBox";
+import messageBox from "../../../../config/messageBox";
 const addForm = reactive({
   productName: "",
   price: 0,
@@ -42,19 +42,24 @@ const onHandleSubmit = async () => {
 </script>
 
 <template>
-  <el-form ref="form" :model="addForm">
-    <el-form-item label="Tên sản phẩm">
-      <el-input v-model="addForm.productName"></el-input>
-    </el-form-item>
-    <el-form-item label="Giá sản phẩm">
-      <el-input type="text" v-model="addForm.price"></el-input>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="onHandleSubmit"
-        >Thêm sản phẩm</el-button
-      >
-    </el-form-item>
-  </el-form>
+  <div>
+    <el-h1>Thêm sản phẩm </el-h1>
+
+    <el-form class="m-5" ref="form" :model="addForm">
+      <el-form-item label="Tên sản phẩm">
+        <el-input v-model="addForm.productName"></el-input>
+      </el-form-item>
+      <el-form-item label="Giá sản phẩm">
+        <el-input type="text" v-model="addForm.price"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" class="bg-blue-500" @click="onHandleSubmit"
+          >Thêm sản phẩm</el-button
+        >
+      </el-form-item>
+    </el-form>
+  </div>
+
   <br />
 </template>
 
